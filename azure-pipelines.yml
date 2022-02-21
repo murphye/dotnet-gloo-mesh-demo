@@ -1,10 +1,19 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+# TODO: https://subhankarsarkar.com/dot-net6-azure-web-app-deployment-using-azure-devops-pipeline/
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/dotnet-core?view=azure-devops&tabs=dotnetfive
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/containers/build-image?view=azure-devops
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/containers/push-image?view=azure-devops
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/containers/acr-template?view=azure-devops
+
 trigger:
-- main
+  branches:
+    include:
+    - main
+  paths:
+    include: code
+    exclude: config
 
 pool:
   vmImage: ubuntu-latest
